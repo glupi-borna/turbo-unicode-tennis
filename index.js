@@ -2,7 +2,7 @@
 let main;
 /** @type {HTMLElement} */
 let ui;
-let width = 26;
+let width = 27;
 let height = 10;
 
 /**
