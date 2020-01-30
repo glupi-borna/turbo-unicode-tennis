@@ -335,17 +335,17 @@ function setup_grid() {
 }
 
 function setup_menu() {
-	ui_label( "TURBO", "35%", "15%", "black", "white", "64px mono" );
-	ui_label( "unicode", "50%", "15%", "black", "fuchsia", "64px script" );
-	ui_label( "TENNIS", "65%", "15%", "black", "white", "64px mono" );
+	ui_label( "TURBO", "35%", "15%", "black", "white", "2.5vw mono" );
+	ui_label( "ｕｎｉｃｏｄｅ", "50%", "15%", "black", "fuchsia", "3vw mono" );
+	ui_label( "TENNIS", "65%", "15%", "black", "white", "2.5vw mono" );
 
-	ui_label( "p1: wasd", "25%", "66%", "white", "red" );
-	ui_label( "p2: arrows", "75%", "66%", "white", "darkblue" );
+	ui_label( "p1: wasd", "25%", "66%", "white", "red", "2.5vw mono" );
+	ui_label( "p2: arrows", "75%", "66%", "white", "darkblue", "2.5vw mono" );
 
 	ui_button( "Play", "50%", "50%", () => {
 		ui_clear();
 		setup_game();
-	} );
+	}, "black", "white", "2.5vw mono" );
 }
 
 function setup_game() {
@@ -412,7 +412,7 @@ function ui_clear() {
 	}
 }
 
-function ui_button( label, x, y, onclick, bgcol = "black", fgcol = "white" ) {
+function ui_button( label, x, y, onclick, bgcol = "black", fgcol = "white", font = "" ) {
 	const button = document.createElement( "button" );
 	button.onclick = onclick;
 	button.style.color = fgcol;
@@ -420,6 +420,7 @@ function ui_button( label, x, y, onclick, bgcol = "black", fgcol = "white" ) {
 	button.style.position = "absolute";
 	button.style.left = x;
 	button.style.top = y;
+	button.style.font = font;
 	button.style.transform = "translate(-50%, -50%)";
 	button.appendChild( document.createTextNode( label ) );
 	ui.appendChild( button );
