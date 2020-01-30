@@ -294,7 +294,8 @@ window.onresize = () => {
 
 	let rect = main.getBoundingClientRect();
 
-	main.style.fontSize = ( ( rect.height / height ) * 0.75 ) + "px";
+	main.style.fontSize = ( rect.height / height ) + "px";
+	main.style.lineHeight = main.style.fontSize;
 };
 
 window.onload = () => {
@@ -365,6 +366,7 @@ function setup_game() {
 				wall.insert();
 				wall.background = "white";
 				wall.foreground = "gray";
+				wall.display = "▩";
 			}
 		}
 	}
